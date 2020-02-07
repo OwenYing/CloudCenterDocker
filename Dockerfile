@@ -2,7 +2,7 @@ FROM debian:latest
 
 # For Windows, download and launch Xming
 
-# Set up X11
+# Set up ssh and X11
 RUN apt update
 RUN apt install -y sudo
 RUN apt install -y openssh-server
@@ -29,6 +29,10 @@ RUN echo "root:root" | chpasswd
 COPY . /root
 WORKDIR /root
 RUN tar -xvzf p4v.tgz
+RUN apt install -y x11-common
+RUN apt install -y xserver-xorg
+RUN apt install -y xorg
+RUN apt install -y gnome
 RUN apt install -y libxkbcommon-x11-0
 # 4. SSH into the container 
 # 5. >> cd /root/p4v.../bin
