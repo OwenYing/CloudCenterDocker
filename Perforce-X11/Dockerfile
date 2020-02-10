@@ -15,7 +15,8 @@
 # 10. >> cd /root/p4v.../bin   
 # 11. >> ./p4v
 # 12. In p4v: server: perforce.mathworks.com:1666
-
+# 13. Mount from local to container
+    # >> docker run -dit -v ${PWD}:/usr/local/golang-workspace/src -p 1111:22 cloud-center-docker:v1
 
 
 
