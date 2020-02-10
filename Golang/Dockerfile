@@ -45,3 +45,7 @@ RUN go get -u github.com/t-tomalak/logrus-easy-formatter
 
 # put protoc-gen-go onto the path
 # export PATH=/usr/local/golang-workspace/bin:$PATH 
+
+# Put protoc-gen-validator to the path:  https://github.com/mwitkow/go-proto-validators
+# export PATH=${PATH}:${GOPATH}/bin
+# go get github.com/mwitkow/go-proto-validators/protoc-gen-govalidators
