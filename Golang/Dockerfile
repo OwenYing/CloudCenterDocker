@@ -1,6 +1,7 @@
 # How to use this
 # 1. >> docker build -t cloud-center-golang:v1 .
-# 2. >> docker run -dit -v ${PWD}:/usr/local/golang-workspace/src cloud-center-golang:v1
+# 2. Go to your local workspace
+# 3. >> docker run -dit -v ${PWD}:/usr/local/golang-workspace/src cloud-center-golang:v1
 
 
 
