@@ -27,25 +27,33 @@ RUN go get -u github.com/prometheus/...
 RUN go get -u github.com/sirupsen/logrus
 RUN go get -u github.com/t-tomalak/logrus-easy-formatter
 
+
+# Install protoc command. http://google.github.io/proto-lens/installing-protoc.html
+RUN apt update
+RUN apt install -y sudo
+RUN apt install -y curl
+RUN apt install -y unzip
+RUN PROTOC_ZIP=protoc-3.7.1-linux-x86_64.zip; \
+    curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/$PROTOC_ZIP; \
+    sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc; \
+    sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'; \
+    rm -f $PROTOC_ZIP
+
+
+
+# Install protoc validator
+# Put protoc-gen-go + protoc-gen-validator to the $PATH.  https://github.com/mwitkow/go-proto-validators
+ENV PATH=${PATH}:${GOPATH}/bin
+RUN go get github.com/mwitkow/go-proto-validators/protoc-gen-govalidators
+
+
+
+
+
+
 #go get -u github.com/golang/protobuf/protoc-gen-go
 #go get -u mathworks.com/cloud/props/propspb/v1/;propspb
-
-# Install protoc command
-# apt install sudo
-# apt install curl
-# apt install unzip
-# PROTOC_ZIP=protoc-3.7.1-linux-x86_64.zip
-# curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/$PROTOC_ZIP
-# sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc
-# sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'
-# rm -f $PROTOC_ZIP
-
-# go get -d github.com/envoyproxy/protoc-gen-validate
-# apt install runit  --> this crashes the container
-
 # put protoc-gen-go onto the path
 # export PATH=/usr/local/golang-workspace/bin:$PATH 
 
-# Put protoc-gen-validator to the path:  https://github.com/mwitkow/go-proto-validators
-# export PATH=${PATH}:${GOPATH}/bin
-# go get github.com/mwitkow/go-proto-validators/protoc-gen-govalidators
+
