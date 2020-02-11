@@ -13,7 +13,16 @@
 	// You can edit these settings after create using File > Preferences > Settings > Remote.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash",
-		"go.gopath": "/go"
+		"go.gopath": "/go",
+
+		// Perforce for VS Code Extension settings -- Workspace
+		"perforce.addOnFileCreate": true,
+		"perforce.deleteOnFileDelete": true,
+		"perforce.editOnFileSave": true,
+		"perforce.hideNonWorkspaceFiles": true,
+		"perforce.port": "perforce.mathworks.com:1666"
+		// Perforce for VS Code Extension settings -- User
+
 	},
 	
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
