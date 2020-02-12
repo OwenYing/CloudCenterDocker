@@ -21,9 +21,10 @@
 		"perforce.editOnFileSave": true,
 		"perforce.hideNonWorkspaceFiles": true,
 		"perforce.port": "perforce.mathworks.com:1666",
+		"perforce.command": "/root/p4", // where is the p4 command in the container, corresponding to "Dockerfile" line 21-24
+
 		// Perforce for VS Code Extension settings -- User
 		"perforce.client": "owenying_e395f61dccf4_9415", // This is the Perforce Workspace id
-		"perforce.command": "/root/p4", // where is the p4 command in the container
 		"perforce.user": "owenying" // username of perforce
 	},
 	
