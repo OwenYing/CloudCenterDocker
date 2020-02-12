@@ -20,9 +20,11 @@
 		"perforce.deleteOnFileDelete": true,
 		"perforce.editOnFileSave": true,
 		"perforce.hideNonWorkspaceFiles": true,
-		"perforce.port": "perforce.mathworks.com:1666"
+		"perforce.port": "perforce.mathworks.com:1666",
 		// Perforce for VS Code Extension settings -- User
-
+		"perforce.client": "owenying_e395f61dccf4_9415", // This is the Perforce Workspace id
+		"perforce.command": "/root/p4", // where is the p4 command in the container
+		"perforce.user": "owenying" // username of perforce
 	},
 	
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure

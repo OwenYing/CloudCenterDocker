@@ -16,6 +16,13 @@ ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
+# Install p4 command, which install the p4 into the /root directory.
+# In devcontainer.json, the P4 command setting then needs to be /root/p4
+COPY . /root
+WORKDIR /root
+RUN tar -xzf p4.tgz
+WORKDIR /usr/local/golang-workspace/src
+
 # Configure apt, install packages and tools
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
