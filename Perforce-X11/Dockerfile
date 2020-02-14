@@ -3,7 +3,7 @@
 # 2. Put it into the same folder with Dockerfile.
 # 3. Rename it to "p4v.tgz"
 # 4. >> docker build -t cloud-center-docker:v1 .
-# 5. >> docker run -dit -p 1111:22 cloud-center-docker:v1
+# 5. Now a Docker image has been built
 # 6. Download and launch Xming on Windows
 # 7. Download PuTTY on Windows
 #       Connect using Putty:
